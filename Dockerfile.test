@@ -10,6 +10,7 @@ RUN go get -u golang.org/x/lint/golint
 
 COPY . .
 
+go get -u github.com/golang/dep/cmd/dep
 RUN dep init
 
 RUN go get -v
