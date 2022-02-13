@@ -27,6 +27,8 @@
 //        )
 //    }
 //}
+def imageName = 'oleksiihead/films-parser'
+
 node('workers'){
     stage('Checkout'){
         checkout scm
