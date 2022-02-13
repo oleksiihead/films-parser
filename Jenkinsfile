@@ -22,7 +22,7 @@ node('workers'){
 
     stage('Security Tests') {
         imageTest.inside('-u root:root'){
-            sh 'nancy /go/src/github/oleksiihead/films-parser/Gopkc.lock'
+            sh 'nancy /go/src/github/oleksiihead/films-parser/Gopkg.lock'
         }
     }
 }
