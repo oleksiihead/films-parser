@@ -19,4 +19,10 @@ node('workers'){
             sh 'go test'
         }
     }
+
+    stage('Security Tests') {
+        imageTest.inside('-u root:root'){
+            sh 'nancy /go/src/github/oleksiihead/films-parser/Gopkc.lock'
+        }
+    }
 }
