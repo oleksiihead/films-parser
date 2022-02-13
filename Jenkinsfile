@@ -9,21 +9,21 @@ node('workers'){
 
     stage('Pre-integration Tests') {
         parallel(
-                'Quality Tests': {
-                    imageTest.inside {
-                        sh 'golint'
-                    }
-                },
-                'Unit Tests': {
-                    imageTest.inside('-u root:root'){
-                        sh 'go test'
-                    }
-                },
-                'Security Tests': {
-                    imageTest.inside('-u root:root'){
-                        sh 'nancy /go/src/github/oleksiihead/films-parser/Gopkg.lock'
-                    }
+            'Quality Tests': {
+                imageTest.inside {
+                    sh 'golint'
                 }
+            },
+            'Unit Tests': {
+                imageTest.inside('-u root:root'){
+                    sh 'go test'
+                }
+            },
+            'Security Tests': {
+                imageTest.inside('-u root:root'){
+                    sh 'nancy Gopkg.lock'
+                }
+            }
         )
     }
 }
