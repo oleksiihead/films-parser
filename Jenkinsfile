@@ -14,7 +14,8 @@ node('workers'){
     }
 
     stage('Unit Tests') {
-        imageTest.inside{
+        //imageTest.inside{
+        imageTest.inside('-u root:root'){
             sh 'go test'
         }
     }
