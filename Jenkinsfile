@@ -16,13 +16,13 @@ node('workers'){
                 }
             },
             'Unit Tests': {
-                imageTest.inside{
+                imageTest.inside('-u root:root'){
                     sh 'go test'
                 }
             },
             'Security Tests': {
                 imageTest.inside('-u root:root'){
-                    sh 'nancy /go/src/github/mlabouardy/movies-parser/Gopkg.lock'
+                    sh 'nancy sleuth -p /go/src/github/mlabouardy/movies-parser/Gopkg.lock'
                 }
             }
         )
