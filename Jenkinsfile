@@ -28,10 +28,10 @@ node('workers'){
         )
     }
 
-//     stage('Build'){
-//         docker.build(imageName)
-//     }
-//
+    stage('Build'){
+        docker.build(imageName)
+    }
+
 //     stage('Push'){
 //         docker.withRegistry(registry, 'registry') {
 //             docker.image(imageName).push(commitID())
