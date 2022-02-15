@@ -1,5 +1,5 @@
-def imageName = 'mlabouardy/movies-parser'
-def registry = 'https://registry.slowcoder.com'
+def imageName = "oleksiihead/films-parser:${BUILD_ID}"
+//def registry = 'https://registry.smiichuk.click'
 
 node('workers'){
     stage('Checkout'){
